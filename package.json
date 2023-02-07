@@ -1,0 +1,29 @@
+{
+  "name": "unb_module-14_tech-blog_ren-besson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renbesson/unb_module-14_tech-blog_ren-besson.git"
+  },
+  "author": "Ren Besson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renbesson/unb_module-14_tech-blog_ren-besson/issues"
+  },
+  "homepage": "https://github.com/renbesson/unb_module-14_tech-blog_ren-besson#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.1.1",
+    "sequelize": "^6.28.0"
+  }
+}
