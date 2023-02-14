@@ -1,21 +1,27 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<div class="grid grid-cols-1 gap-2 form-control w-full max-w-xs">
+  <h2 class="text-2xl font-bold">Sign In</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
+  <label class="block">
+    <span class="label-text">What is your email?</span>
+    <input
+      id="email"
+      type="email"
+      placeholder="nome@exemplo.com.br"
+      class="input input-primary w-full max-w-xs"
+    />
+  </label>
+
+  <label class="block">
+    <span class="label-text">Type a new password?</span>
+    <input
+      id="password"
+      type="password"
+      placeholder="ExemPloSenHa9#"
+      class="input input-primary w-full max-w-xs"
+    />
+  </label>
+
+  <button class="btn btn-primary" id="signinButton">sign in</button>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="./functions/signin.js"></script>
