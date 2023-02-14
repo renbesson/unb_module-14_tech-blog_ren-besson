@@ -14,29 +14,10 @@
   </head>
 
   <body>
-    <header>
-      <nav class="flex justify-between p-3">
-        <!-- Conditionally render login or logout links -->
-        <h1>
-          <a href="/" class="text-3xl">LOGO</a>
-        </h1>
-        {{#if isLogged}}
-          <a href="/profile">profile</a>
-          |
-          <button class="btn btn-primary" id="logout">logout</button>
-        {{else}}
-          <a href="/signin">
-            <button class="btn btn-primary" id="signinBtn">sign in</button>
-          </a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container mx-auto">
+
+    <main class="container mx-auto mt-10">
       {{{body}}}
     </main>
-    <footer>
-
-    </footer>
 
     <!-- Render script for logged in users only -->
     {{#if isLogged}}
