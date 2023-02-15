@@ -15,7 +15,7 @@ const signinFormHandler = async (event) => {
       document.location.replace("/dashboard");
     } else {
       const resJson = await response.json();
-      alert(`${response.statusText} ${resJson.errors[0].message}`);
+      alert(`${response.statusText}\r${resJson.message}`);
     }
   }
 };
