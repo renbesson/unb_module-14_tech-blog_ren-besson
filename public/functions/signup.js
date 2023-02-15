@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
       });
 
       if (response.ok) {
-        document.location.replace("/profile");
+        document.location.replace("/dashboard");
       } else {
         const myJson = await response.json();
         alert(myJson.errors[0].message);

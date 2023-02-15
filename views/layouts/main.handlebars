@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fund My Project!</title>
+    <title>Tech Blog</title>
     {{! <link rel="stylesheet" href="/css/global.css" /> }}
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.50.0/dist/full.css"
@@ -19,6 +19,7 @@
         <!-- Conditionally render login or logout links -->
         <h1>
           <a href="/" class="text-3xl">LOGO</a>
+          <a href="/"><button class="btn btn-primary" id="home">Home</button></a>
         </h1>
         {{#if isLogged}}
           <div>
@@ -26,8 +27,7 @@
                 class="btn btn-primary"
                 id="dashboard"
               >dashboard</button></a>
-            <a href="/profile"><button class="btn btn-primary" id="profile">profile</button></a>
-            <a href="/profile"><button class="btn btn-primary" id="logout">logout</button></a>
+            <button class="btn btn-primary" id="logout">logout</button>
           </div>
         {{else}}
           <div>
@@ -48,7 +48,6 @@
 
     </footer>
 
-    <!-- Render script for logged in users only -->
     {{#if isLogged}}
       <script src="/js/logout.js"></script>
     {{/if}}

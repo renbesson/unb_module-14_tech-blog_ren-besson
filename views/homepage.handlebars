@@ -1,6 +1,13 @@
-<!-- Loop over each object in the projects array -->
-{{#if isLogged}}
-  <p>Logged In</p>
-{{else}}
-  <p class="text-xl font-bold">Not Logged In</p>
-{{/if}}
+<div class="flex flex-col gap-5">
+  {{#each posts as |post|}}
+    <div class="card glass w-full h-40">
+      <div class="card-body">
+        <a class="card-title hover:text-gray-500" href="/post/{{post.id}}">{{post.title}}</a>
+        <p class="italic text-xs">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+        <div class="text-ellipsis overflow-hidden whitespace-nowrap">
+          {{post.text}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
