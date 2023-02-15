@@ -25,4 +25,4 @@ const signupFormHandler = async (event) => {
   }
 };
 
-document.getElementById("signupBtn").addEventListener("click", signupFormHandler);
+document.getElementById("signupButton").addEventListener("click", signupFormHandler);

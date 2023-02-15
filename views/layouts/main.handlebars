@@ -21,13 +21,23 @@
           <a href="/" class="text-3xl">LOGO</a>
         </h1>
         {{#if isLogged}}
-          <a href="/profile">profile</a>
-          |
-          <button class="btn btn-primary" id="logout">logout</button>
+          <div>
+            <a href="/dashboard"><button
+                class="btn btn-primary"
+                id="dashboard"
+              >dashboard</button></a>
+            <a href="/profile"><button class="btn btn-primary" id="profile">profile</button></a>
+            <a href="/profile"><button class="btn btn-primary" id="logout">logout</button></a>
+          </div>
         {{else}}
-          <a href="/signin">
-            <button class="btn btn-primary" id="signinBtn">sign in</button>
-          </a>
+          <div>
+            <a href="/signin">
+              <button class="btn btn-primary" id="signinBtn">sign in</button>
+            </a>
+            <a href="/signup">
+              <button class="btn btn-primary" id="signupBtn">sign up</button>
+            </a>
+          </div>
         {{/if}}
       </nav>
     </header>
