@@ -26,7 +26,7 @@ router.post("/", withAuth, async (req, res) => {
 ////////////////////////////////////////////////////////////////////////////////////////
 router.put("/:id", withAuth, async (req, res) => {
   const text = req.body.text;
-  console.log(req.body.id);
+
   try {
     const editedComment = await Comment.update(
       { text },

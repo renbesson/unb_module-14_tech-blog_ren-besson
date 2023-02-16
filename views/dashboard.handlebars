@@ -17,7 +17,10 @@
           <div class="text-ellipsis overflow-hidden whitespace-nowrap">
             {{post.text}}
           </div>
-          <button id="deleteBtn" data-id="{{post.id}}" class="btn btn-primary btn-sm mb-3">delete</button>
+          <div class="flex justify-end gap-3">
+            <a href="/post/edit/{{post.id}}"><button id="editBtn" data-id="{{post.id}}" class="btn btn-info btn-sm mb-3">edit</button></a>
+            <button id="deleteBtn" data-id="{{post.id}}" class="btn btn-error btn-sm mb-3">delete</button>
+          </div>
         </div>
       </div>
     {{/each}}

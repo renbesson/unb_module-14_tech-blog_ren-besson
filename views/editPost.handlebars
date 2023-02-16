@@ -1,0 +1,32 @@
+<div class="form-control gap-5 mx-5">
+
+  <div class="block">
+    <span class="label-text">Updated Title (255 max)</span>
+    <textarea
+      id="updatedTitle"
+      class="textarea textarea-primary h-12 w-full hover:bg-white focus:bg-white"
+      placeholder="Type a new title..."
+    >{{title}}</textarea>
+  </div>
+
+  <div class="block">
+    <span class="label-text">Updated Post</span>
+    <textarea
+      id="updatedText"
+      class="textarea textarea-primary h-64 w-full hover:bg-white focus:bg-white"
+      placeholder="Type a new post..."
+    >{{text}}</textarea>
+  </div>
+
+  <button id="updatePostBtn" class="btn btn-primary w-full mt-3">update</button>
+
+</div>
+
+<script>
+  const post_id =
+  {{id}}
+  const user_id =
+  {{user_id}}
+</script>
+
+<script src="/functions/editPost.js"></script>
