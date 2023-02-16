@@ -11,7 +11,7 @@
   </div>
 
   <h2 class="text-xl font-bold">Comments</h2>
-
+<div>
   {{#each comments as |comment|}}
     <div class="chat chat-start">
       <div class="chat-header">
@@ -32,6 +32,7 @@
       </div>
     </div>
   {{/each}}
+  </div>
 
   <div class="form-control">
     <div class="block">
@@ -49,9 +50,7 @@
   </div>
 
 </div>
-
 <script>
-    const post_id = {{id}}
-    const user_id = {{user_id}}
+  const post_id = {{id}}
 </script>
 <script src="/functions/post.js"></script>
