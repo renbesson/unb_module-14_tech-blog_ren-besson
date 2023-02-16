@@ -37,7 +37,7 @@ router.get("/post/:id", async (req, res) => {
         },
         {
           model: Comment,
-          include: [{ model: User, attributes: ["name"] }],
+          include: [{ model: User }],
         },
       ],
     });
@@ -47,6 +47,7 @@ router.get("/post/:id", async (req, res) => {
     res.render("post", {
       ...post,
       isLogged: req.session.isLogged,
+      user_id: req.session.user_id,
     });
   } catch (error) {
     res.render("500", { layout: "error", error });

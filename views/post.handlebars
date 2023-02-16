@@ -18,8 +18,11 @@
         {{comment.user.name}}
       </div>
       <div class="chat-bubble whitespace-pre-wrap">{{comment.text}}</div>
-      <div class="chat-footer opacity-50">
-        {{format_date comment.date_created}}
+      <div class="chat-footer opacity-50 flex">
+        <p>{{format_date comment.date_created}}</p>
+        {{#if (is_eq user_id ../user_id)}}
+            <button id="deleteBtn" data-comment_id="{{id}}" class="btn btn-xs btn-error">delete</button>
+        {{/if}}
       </div>
     </div>
   {{/each}}
