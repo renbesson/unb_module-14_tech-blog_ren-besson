@@ -15,9 +15,34 @@ const newPostHandler = async (event) => {
       document.location.replace("/dashboard");
     } else {
       const myJson = await response.json();
-      alert(`${response.statusText}\n${myJson.errors[0].message}`);
+      alert(`${response.statusText}\n${JSON.stringify(myJson.message)}`);
     }
   }
 };
 
 document.getElementById("newPostBtn").addEventListener("click", newPostHandler);
+
+const deleteHandler = async (event) => {
+  const id = event.target.attributes[1].value;
+
+  if (id) {
+    const response = await fetch(`/api/post/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      document.location.replace("/dashboard");
+    } else {
+      const myJson = await response.json();
+      alert(`${response.statusText}\n${myJson.message}`);
+    }
+  }
+};
+
+const buttons = document.querySelectorAll("#deleteBtn");
+
+for (const button of buttons) {
+  const id = button.getAttribute("data-id");
+  button.addEventListener("click", deleteHandler);
+}
