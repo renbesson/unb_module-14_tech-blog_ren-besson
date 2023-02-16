@@ -1,7 +1,53 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+<div class="flex flex-col gap-5">
+
+  <div class="mx-5">
+    <h2 class="text-lg">Welcome, {{name}}!</h2>
+    <h2 class="text-lg">You have {{posts.length}} post(s) published.</h2>
   </div>
+
+  <div class="flex flex-col gap-5">
+    {{#each posts as |post|}}
+      <div class="card glass h-40 mx-5">
+        <div class="card-body">
+          <a class="card-title hover:text-gray-500" href="/post/{{post.id}}">{{post.title}}</a>
+          <p class="italic text-xs">Created by
+            {{../name}}
+            on
+            {{format_date post.date_created}}</p>
+          <div class="text-ellipsis overflow-hidden whitespace-nowrap">
+            {{post.text}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <hr class="h-px my-5 mx-5 bg-gray-200 border-0 dark:bg-gray-700" />
+
+  <div class="form-control mx-5">
+
+    <div class="block">
+      <span class="label-text">New Title</span>
+      <input
+        id="newTitle"
+        class="input input-primary w-full hover:bg-white focus:bg-white"
+        placeholder="Type a new title..."
+      />
+    </div>
+
+    <div class="block">
+      <span class="label-text">New Post</span>
+      <textarea
+        id="newPost"
+        class="textarea textarea-primary h-64 w-full hover:bg-white focus:bg-white"
+        placeholder="Type a new post..."
+      ></textarea>
+    </div>
+
+    <button id="newPostBtn" class="btn btn-primary w-full mt-3">submit</button>
+
+  </div>
+
 </div>
 
-{{!-- <script src="./functions/dashboard.js"></script> --}}
+<script src="./functions/dashboard.js"></script>

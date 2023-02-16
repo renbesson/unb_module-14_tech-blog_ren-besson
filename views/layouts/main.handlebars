@@ -18,7 +18,7 @@
       <nav class="flex justify-between p-3">
         <!-- Conditionally render login or logout links -->
         <h1>
-          <a href="/" class="text-3xl">LOGO</a>
+          <a href="/" class="text-3xl mb-3">Tech Blog</a>
           <a href="/"><button class="btn btn-primary" id="home">Home</button></a>
         </h1>
         {{#if isLogged}}
@@ -32,7 +32,7 @@
         {{else}}
           <div>
             <a href="/signin">
-              <button class="btn btn-primary" id="signinBtn">sign in</button>
+              <button class="btn btn-primary mb-3" id="signinBtn">sign in</button>
             </a>
             <a href="/signup">
               <button class="btn btn-primary" id="signupBtn">sign up</button>
@@ -41,11 +41,11 @@
         {{/if}}
       </nav>
     </header>
-    <main class="container mx-auto">
+    <main class="container mx-auto mt-10">
       {{{body}}}
     </main>
     <footer>
-
+      <div class="mb-10"></div>
     </footer>
 
     {{#if isLogged}}
