@@ -17,11 +17,17 @@
       <div class="chat-header">
         {{comment.user.name}}
       </div>
-      <div class="chat-bubble whitespace-pre-wrap">{{comment.text}}</div>
-      <div class="chat-footer opacity-50 flex">
+      {{#if (is_eq user_id ../user_id)}}
+        <textarea id="updateComment-{{comment.id}}" class="chat-bubble whitespace-pre-wrap">{{comment.text}}</textarea>
+      {{else}}
+        <div class="chat-bubble whitespace-pre-wrap">{{comment.text}}</div>
+      {{/if}}
+
+      <div class="chat-footer opacity-50">
         <p>{{format_date comment.date_created}}</p>
         {{#if (is_eq user_id ../user_id)}}
-            <button id="deleteBtn" data-comment_id="{{id}}" class="btn btn-xs btn-error">delete</button>
+          <button id="updateBtn" data-comment_id="{{comment.id}}" class="btn btn-xs btn-info">update</button>
+          <button id="deleteBtn" data-comment_id="{{comment.id}}" class="btn btn-xs btn-error">delete</button>
         {{/if}}
       </div>
     </div>
@@ -44,5 +50,8 @@
 
 </div>
 
-<script>const post_id = {{id}}</script>
+<script>
+    const post_id = {{id}}
+    const user_id = {{user_id}}
+</script>
 <script src="/functions/post.js"></script>

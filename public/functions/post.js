@@ -27,15 +27,17 @@ document.getElementById("newCommentBtn").addEventListener("click", newCommentHan
 ////////////////////////////////////////////////////////////////////////////////////////
 // Update comment
 ////////////////////////////////////////////////////////////////////////////////////////
-const changeCommentHandler = async (event) => {
+const updateCommentHandler = async (event) => {
   event.preventDefault();
 
-  const text = document.getElementById("editedComment").value.trim();
+  const id = event.target.attributes[1].value;
+  console.log(id);
+  const text = document.getElementById(`updateComment-${id}`).value.trim();
 
   if (text) {
     const response = await fetch(`/api/comment/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ text, post_id }),
+      body: JSON.stringify({ text, id }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -48,14 +50,17 @@ const changeCommentHandler = async (event) => {
   }
 };
 
-document.getElementById("newCommentBtn").addEventListener("click", changeCommentHandler);
+const updateBtns = document.querySelectorAll("#updateBtn");
+
+for (const updateBtn of updateBtns) {
+  updateBtn.addEventListener("click", updateCommentHandler);
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // Delete comment
 ////////////////////////////////////////////////////////////////////////////////////////
 const deleteCommentHandler = async (event) => {
   const id = event.target.attributes[1].value;
-  console.log(id);
 
   if (id) {
     const response = await fetch(`/api/comment/${id}`, {
@@ -72,8 +77,8 @@ const deleteCommentHandler = async (event) => {
   }
 };
 
-const buttons = document.querySelectorAll("#deleteBtn");
+const deleteBtns = document.querySelectorAll("#deleteBtn");
 
-for (const button of buttons) {
-  button.addEventListener("click", deleteCommentHandler);
+for (const deleteBtn of deleteBtns) {
+  deleteBtn.addEventListener("click", deleteCommentHandler);
 }
