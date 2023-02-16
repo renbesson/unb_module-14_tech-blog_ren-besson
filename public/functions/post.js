@@ -1,20 +1,20 @@
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
-  const newComment = document.getElementById("newComment").value.trim();
+  const text = document.getElementById("newComment").value.trim();
 
-  if (newComment) {
+  if (text) {
     const response = await fetch("/api/comment", {
       method: "POST",
-      body: JSON.stringify({ newComment }),
+      body: JSON.stringify({ text, post_id }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace(`/post/${post_id}`);
     } else {
       const myJson = await response.json();
-      alert(`${response.statusText}\n${myJson.errors[0].message}`);
+      alert(`${response.statusText}`);
     }
   }
 };
